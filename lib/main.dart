@@ -5,9 +5,18 @@ import 'package:flutter/material.dart';
 
 import 'package:estudent/screens/home.dart';
 import 'package:estudent/utils/theme.dart';
+import 'package:flutter/services.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    systemNavigationBarColor: lightTheme.scaffoldBackgroundColor,
+  ));
+
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+  ]);
 
   final initialSettings = await getInitialSettings();
 
