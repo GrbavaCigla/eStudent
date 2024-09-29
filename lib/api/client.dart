@@ -1,11 +1,11 @@
 import "dart:async";
 import "dart:io";
 
-import "package:collection/collection.dart";
-import "package:html/parser.dart";
-
 import "package:http/http.dart" as http;
-import "package:estudent/models/schedule.dart";
+import "package:html/parser.dart";
+import "package:collection/collection.dart";
+
+import "package:estudent/models/subject.dart";
 
 class Client {
   final Uri url;
@@ -83,7 +83,7 @@ class Client {
     var week = table?.getElementsByClassName("rasporedCasovaPanel") ?? [];
     for (var weekday in week) {
       List<Subject> currentRes = [];
-      var subjects = weekday.getElementsByClassName("rasporedSingleDiv") ?? [];
+      var subjects = weekday.getElementsByClassName("rasporedSingleDiv");
       for (var subject in subjects) {
         var subjectElem = subject
             .getElementsByClassName("akronimPredmeta")

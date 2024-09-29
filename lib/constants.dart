@@ -7,6 +7,8 @@ const kPageInset = 16.0;
 
 // Shared Preferences
 const kProviderKey = "provider";
+const kUsernameKey = "username";
+const kPasswordKey = "password";
 
 // Settings
 const kDefaultProvider = "https://student.etf.bg.ac.rs";

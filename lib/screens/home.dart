@@ -1,3 +1,5 @@
+import 'package:estudent/widgets/schedule/list.dart';
+import 'package:estudent/widgets/settings.dart';
 import 'package:flutter/material.dart';
 
 import 'package:estudent/constants.dart';
@@ -13,7 +15,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScaffold(
       appBar: FloatingAppBar(
-        title: const Text("TODO: Change to selected"),
+        title: Text(DynamicSettings.of(context).provider.host),
         centerTitle: true,
         leading: IconButton(
           splashRadius: kIconButtonSplashRadius,
@@ -21,7 +23,7 @@ class HomeScreen extends StatelessWidget {
           onPressed: () => _scaffoldKey.currentState!.openDrawer(),
         ),
       ),
-      body: const Text("Kita"),
+      body: ScheduleList(),
     );
   }
 }

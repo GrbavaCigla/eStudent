@@ -24,8 +24,32 @@ class DynamicSettings extends StatefulWidget {
 
 class DynamicSettingsState extends State<DynamicSettings> {
   late Uri _provider = widget.initial.provider;
+  late String? _username = widget.initial.username;
+  late String? _password = widget.initial.password;
 
   Uri get provider => _provider;
+  String? get username => _username;
+  String? get password => _password;
+
+  set username(String? newValue) {
+    setState(
+      () => _username = newValue,
+    );
+
+    SharedPreferences.getInstance().then(
+      (value) => value.setString(kProviderKey, newValue.toString()),
+    );
+  }
+
+  set password(String? newValue) {
+    setState(
+      () => _password = newValue,
+    );
+
+    SharedPreferences.getInstance().then(
+      (value) => value.setString(kProviderKey, newValue.toString()),
+    );
+  }
 
   set provider(Uri newValue) {
     setState(
@@ -42,6 +66,8 @@ class DynamicSettingsState extends State<DynamicSettings> {
     return SettingsData(
       state: this,
       provider: _provider,
+      username: _username,
+      password: _password,
       child: widget.child,
     );
   }
@@ -50,11 +76,15 @@ class DynamicSettingsState extends State<DynamicSettings> {
 class SettingsData extends InheritedWidget {
   final DynamicSettingsState state;
   final Uri provider;
+  final String? username;
+  final String? password;
 
   const SettingsData({
     super.key,
     required super.child,
     required this.provider,
+    this.username,
+    this.password,
     required this.state,
   });
 
@@ -63,5 +93,7 @@ class SettingsData extends InheritedWidget {
 
   @override
   bool updateShouldNotify(SettingsData oldWidget) =>
-      provider != oldWidget.provider;
+      provider != oldWidget.provider ||
+      username != oldWidget.username ||
+      password != oldWidget.password;
 }
