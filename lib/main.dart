@@ -14,7 +14,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: 'eStudent',
       theme: lightTheme,
-      home: const HomeScreen(),
+      home: HomeScreen(),
     );
   }
 }
