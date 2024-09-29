@@ -1,15 +1,19 @@
-class Subject {
-  final String? name;
-  final List<String>? lecturers;
-  final String? code;
-  final String? group;
-  final String? time;
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:flutter/foundation.dart';
 
-  Subject({
-    this.name,
-    this.lecturers,
-    this.code,
-    this.group,
-    this.time,
-  });
+part 'schedule.freezed.dart';
+part 'schedule.g.dart';
+
+@freezed
+class Schedule with _$Schedule {
+  const factory Schedule({
+    String? name,
+    List<String>? lecturers,
+    String? code,
+    String? group,
+    String? time,
+  }) = _Schedule;
+
+  factory Schedule.fromJson(Map<String, Object?> json) =>
+      _$ScheduleFromJson(json);
 }
