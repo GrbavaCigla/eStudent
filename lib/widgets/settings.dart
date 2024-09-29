@@ -10,10 +10,10 @@ class DynamicSettings extends StatefulWidget {
   final Settings initial;
 
   const DynamicSettings({
-    Key? key,
+    super.key,
     required this.child,
     required this.initial,
-  }) : super(key: key);
+  });
 
   static DynamicSettingsState of(BuildContext context) =>
       context.dependOnInheritedWidgetOfExactType<SettingsData>()!.state;
@@ -52,11 +52,11 @@ class SettingsData extends InheritedWidget {
   final Uri provider;
 
   const SettingsData({
-    Key? key,
-    required Widget child,
+    super.key,
+    required super.child,
     required this.provider,
     required this.state,
-  }) : super(key: key, child: child);
+  });
 
   static SettingsData? of(BuildContext context) =>
       context.dependOnInheritedWidgetOfExactType<SettingsData>();

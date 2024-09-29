@@ -9,12 +9,12 @@ class CustomScaffold extends StatelessWidget {
   final Widget? drawer;
 
   const CustomScaffold({
-    Key? key,
+    super.key,
     this.scaffoldKey,
     this.body,
     this.appBar,
     this.drawer,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

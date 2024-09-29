@@ -30,7 +30,7 @@ class FloatingAppBar extends StatelessWidget implements PreferredSizeWidget {
   final SystemUiOverlayStyle? systemOverlayStyle;
 
   const FloatingAppBar(
-      {Key? key,
+      {super.key,
       this.leading,
       this.title,
       this.actions,
@@ -51,8 +51,7 @@ class FloatingAppBar extends StatelessWidget implements PreferredSizeWidget {
       this.titleTextStyle,
       this.systemOverlayStyle})
       : preferredSize =
-            const Size.fromHeight(kToolbarHeight + kFloatingAppBarMargin * 2),
-        super(key: key);
+            const Size.fromHeight(kToolbarHeight + kFloatingAppBarMargin * 2);
 
   @override
   final Size preferredSize;
