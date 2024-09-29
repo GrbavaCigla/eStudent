@@ -14,7 +14,9 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   shared_preferences: ^2.2.2
-  chaleno: ^0.0.8
+  html: ^0.15.4
+  http: ^1.2.2
+  collection: ^1.18.0
 
 dev_dependencies:
   flutter_test:

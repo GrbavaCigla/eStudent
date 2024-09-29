@@ -1,6 +1,7 @@
+import 'package:flutter/material.dart';
+
 import 'package:estudent/screens/home.dart';
 import 'package:estudent/utils/theme.dart';
-import 'package:flutter/material.dart';
 
 void main() {
   runApp(const App());
