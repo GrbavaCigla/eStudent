@@ -62,6 +62,11 @@ class Client {
         "j_password": password,
       },
     );
+
+    if (resp.request != null &&
+        (resp.request?.url.toString() ?? "").contains("loginError.jsf")) {
+      return Future.error(Exception("Login failed."));
+    }
   }
 
   Future<List<List<Subject>>> getSchedule({login = true}) async {

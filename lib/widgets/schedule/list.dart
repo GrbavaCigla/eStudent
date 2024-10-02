@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
 import 'package:estudent/api/client.dart';
+import 'package:estudent/constants.dart';
 import 'package:estudent/widgets/settings.dart';
 import 'package:estudent/models/subject.dart';
+import 'package:estudent/widgets/schedule/card.dart';
 
 class ScheduleList extends StatefulWidget {
   const ScheduleList({super.key});
@@ -48,7 +50,35 @@ class _ScheduleListState extends State<ScheduleList> {
             .toList(),
       );
     } else if (snap.hasError) {
-      return Text("kita");
+      return Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(
+            Icons.warning_amber_rounded,
+            size: kScheduleListErrorIconSize,
+            color: Theme.of(context).colorScheme.error,
+          ),
+          SizedBox(
+            height: kScheduleListSpacing,
+          ),
+          Text(
+            snap.error!.toString(),
+            textAlign: TextAlign.center,
+            style: Theme.of(context).textTheme.titleLarge,
+          ),
+          SizedBox(
+            height: kScheduleListSpacing,
+          ),
+          Text(
+            "Check provider and user credentials in the Settings dialog.",
+            textAlign: TextAlign.center,
+            style: Theme.of(context)
+                .textTheme
+                .titleSmall
+                ?.copyWith(color: Theme.of(context).disabledColor),
+          ),
+        ],
+      );
     } else {
       return Center(child: CircularProgressIndicator());
     }
@@ -65,8 +95,6 @@ class _ScheduleListState extends State<ScheduleList> {
   }
 
   Widget _subjectBuilder(BuildContext ctx, Subject subject) {
-    return Card(
-      child: Text("TODO"),
-    );
+    return ScheduleCard();
   }
 }

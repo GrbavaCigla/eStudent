@@ -37,7 +37,7 @@ class DynamicSettingsState extends State<DynamicSettings> {
     );
 
     SharedPreferences.getInstance().then(
-      (value) => value.setString(kProviderKey, newValue.toString()),
+      (value) => value.setString(kUsernameKey, newValue.toString()),
     );
   }
 
@@ -47,7 +47,7 @@ class DynamicSettingsState extends State<DynamicSettings> {
     );
 
     SharedPreferences.getInstance().then(
-      (value) => value.setString(kProviderKey, newValue.toString()),
+      (value) => value.setString(kPasswordKey, newValue.toString()),
     );
   }
 

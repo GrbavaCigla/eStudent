@@ -33,3 +33,10 @@ const kInputBorderRadius = kBorderRadius;
 // Button
 const kButtonBorderRadius = kBorderRadius;
 const kButtonPadding = kCardPadding * 1.5;
+
+// ScheduleList
+const kScheduleListSpacing = 4.0;
+const kScheduleListErrorIconSize = 128.0;
+
+// Settings Dialog
+const kSettingsDialogSpacing = 12.0;
