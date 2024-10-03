@@ -94,7 +94,7 @@ class _ScheduleCardState extends State<ScheduleCard> {
                 ] +
                 [
                   AnimatedSwitcher(
-                    duration: Durations.short2,
+                    duration: kScheduleCardAnimationDuration,
                     transitionBuilder: (child, animation) {
                       return SizeTransition(
                           sizeFactor: animation, child: child);
