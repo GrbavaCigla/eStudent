@@ -53,7 +53,7 @@ const kScheduleListErrorIconSize = 128.0;
 // ScheduleCard
 const kScheduleCardPadding = kCardPadding * 2;
 const kScheduleCardSpacing = 2.0;
-const kScheduleCardAnimationDuration = Durations.short1;
+const kScheduleCardAnimationDuration = Durations.short2;
 
 // Settings Dialog
 const kSettingsDialogSpacing = 12.0;
