@@ -97,7 +97,10 @@ class _ScheduleCardState extends State<ScheduleCard> {
                     duration: kScheduleCardAnimationDuration,
                     transitionBuilder: (child, animation) {
                       return SizeTransition(
-                          sizeFactor: animation, child: child);
+                        axisAlignment: -1.0,
+                        sizeFactor: animation,
+                        child: child,
+                      );
                     },
                     child: (_isOpen
                         ? Column(
