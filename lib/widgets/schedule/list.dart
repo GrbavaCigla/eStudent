@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 
+import 'package:collection/collection.dart';
+import 'package:flutter_sticky_header/flutter_sticky_header.dart';
+
 import 'package:estudent/api/client.dart';
 import 'package:estudent/constants.dart';
 import 'package:estudent/widgets/settings.dart';
 import 'package:estudent/models/subject.dart';
+import 'package:estudent/widgets/schedule/header.dart';
 import 'package:estudent/widgets/schedule/card.dart';
 
 class ScheduleList extends StatefulWidget {
@@ -33,9 +37,15 @@ class _ScheduleListState extends State<ScheduleList> {
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(
-      future: _getSchedule(context),
-      builder: _futureBuilder,
+    return RefreshIndicator.adaptive(
+      onRefresh: () async {
+        _schedule = null;
+        setState(() {});
+      },
+      child: FutureBuilder(
+        future: _getSchedule(context),
+        builder: _futureBuilder,
+      ),
     );
   }
 
@@ -46,8 +56,16 @@ class _ScheduleListState extends State<ScheduleList> {
     if (snap.hasData) {
       return CustomScrollView(
         slivers: snap.data!
-            .expand<Widget>((elem) => _dayBuilder(ctx, elem))
-            .toList(),
+                .mapIndexed<Widget>(
+                    (index, elem) => _dayBuilder(ctx, index, elem))
+                .toList() +
+            [
+              SliverToBoxAdapter(
+                child: SizedBox(
+                  height: kToolbarHeight + 2 * kFloatingAppBarMargin,
+                ),
+              )
+            ],
       );
     } else if (snap.hasError) {
       return Column(
@@ -84,17 +102,21 @@ class _ScheduleListState extends State<ScheduleList> {
     }
   }
 
-  List<Widget> _dayBuilder(BuildContext ctx, List<Subject> subjects) {
-    return [
-      // TODO:
-      // SliverPersistentHeader(delegate: )
-      SliverList.builder(
-        itemBuilder: (ctx, index) => _subjectBuilder(ctx, subjects[index]),
-      )
-    ];
+  Widget _dayBuilder(BuildContext ctx, int index, List<Subject> subjects) {
+    return SliverStickyHeader(
+      header: ScheduleHeader(
+        title: kWeekDayNames[index],
+      ),
+      sliver: SliverList.list(
+        children: subjects.map((elem) => _subjectBuilder(ctx, elem)).toList(),
+      ),
+    );
   }
 
   Widget _subjectBuilder(BuildContext ctx, Subject subject) {
-    return ScheduleCard();
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: kPageInset),
+      child: ScheduleCard(subject: subject),
+    );
   }
 }

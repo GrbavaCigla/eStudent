@@ -41,6 +41,15 @@ final elevatedButtonTheme = ElevatedButtonThemeData(style: buttonStyle);
 final textButtonTheme = TextButtonThemeData(style: buttonStyle);
 final outlinedButtonTheme = OutlinedButtonThemeData(style: buttonStyle);
 
+final cardTheme = CardTheme(
+  margin: EdgeInsets.all(kCardMargin),
+  elevation: 2.0,
+  shape: ContinuousRectangleBorder(
+    side: BorderSide(width: kCardBorderWidth, color: primarySwatch),
+    borderRadius: BorderRadius.circular(kCardBorderRadius),
+  ),
+);
+
 final lightTheme = ThemeData(
   useMaterial3: false,
   colorSchemeSeed: primarySwatch,
@@ -50,4 +59,5 @@ final lightTheme = ThemeData(
   elevatedButtonTheme: elevatedButtonTheme,
   textButtonTheme: textButtonTheme,
   outlinedButtonTheme: outlinedButtonTheme,
+  cardTheme: cardTheme,
 );

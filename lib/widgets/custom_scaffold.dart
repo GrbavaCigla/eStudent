@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:estudent/constants.dart';
-
 class CustomScaffold extends StatelessWidget {
   final Key? scaffoldKey;
   final Widget? body;
@@ -25,12 +23,8 @@ class CustomScaffold extends StatelessWidget {
         child: Stack(
           alignment: Alignment.bottomCenter,
           children: [
-            Container(
-              margin: const EdgeInsets.symmetric(horizontal: kPageInset),
-              height: MediaQuery.of(context).size.height,
-              child: body ?? Container(),
-            ),
-            appBar ?? Container()
+            body ?? Container(),
+            appBar ?? Container(),
           ],
         ),
       ),

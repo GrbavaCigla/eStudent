@@ -11,6 +11,7 @@ class Subject with _$Subject {
     String? code,
     String? group,
     String? time,
+    String? place,
   }) = _Subject;
 
   factory Subject.fromJson(Map<String, Object?> json) =>

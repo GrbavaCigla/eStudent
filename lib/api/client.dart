@@ -108,12 +108,24 @@ class Client {
             ?.nextElementSibling
             ?.getElementsByTagName("span");
 
-        currentRes.add(Subject(
-          name: subjectElem?.attributes["title"],
-          lecturers: lecturerElems?.map((elem) => elem.text).toList(),
-          code: subjectElem?.text,
-          group: groupElem?.text,
-        ));
+        var timeElem = subject.getElementsByClassName("vreme").firstOrNull;
+
+        var placeElem = subject
+            .getElementsByClassName("sala")
+            .firstOrNull
+            ?.children
+            .firstOrNull;
+
+        currentRes.add(
+          Subject(
+            name: subjectElem?.attributes["title"],
+            lecturers: lecturerElems?.map((elem) => elem.text).toList(),
+            code: subjectElem?.text,
+            group: groupElem?.text,
+            time: timeElem?.text,
+            place: placeElem?.attributes["title"],
+          ),
+        );
       }
 
       res.add(currentRes);
