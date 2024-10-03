@@ -41,6 +41,7 @@ class _ScheduleListState extends State<ScheduleList> {
       onRefresh: () async {
         _schedule = null;
         setState(() {});
+        await Future.delayed(kScheduleListPullDuration);
       },
       child: FutureBuilder(
         future: _getSchedule(context),

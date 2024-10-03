@@ -49,6 +49,7 @@ const kButtonPadding = kCardPadding * 1.5;
 // ScheduleList
 const kScheduleListSpacing = 4.0;
 const kScheduleListErrorIconSize = 128.0;
+const kScheduleListPullDuration = Duration(seconds: 1);
 
 // ScheduleCard
 const kScheduleCardPadding = kCardPadding * 2;
