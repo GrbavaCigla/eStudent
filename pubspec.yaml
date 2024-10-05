@@ -1,9 +1,9 @@
 name: estudent
-description: A new Flutter project.
+description: Track your class schedules via eStudent services.
 
 publish_to: "none"
 
-version: 1.0.0+1
+version: 1.0.1
 
 environment:
   sdk: ">=2.19.6 <3.0.0"

@@ -1,16 +1,14 @@
-# estudent
+# eStudent
 
-A new Flutter project.
+Track your class schedules via eStudent services
 
-## Getting Started
+## Description
 
-This project is a starting point for a Flutter application.
+The eStudent schedule app allows students to effortlessly track their class schedules directly from their university’s eStudent services. It provides real-time updates on class times and locations, ensuring you stay informed of any changes. With a simple, user-friendly interface, the app makes it easy to keep up with your timetable and stay on top of your academic schedule.
 
-A few resources to get you started if this is your first Flutter project:
+## Screenshots
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+| Schedule                                                                                                               | Additional information                                                                                               | Settings                                                                                                                  |
+|------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
+| ![start](https://github.com/GrbavaCigla/eStudent/blob/master/metadata/en-US/images/phoneScreenshots/settings/logo.png) | ![mid](https://github.com/GrbavaCigla/eStudent/blob/master/metadata/en-US/images/phoneScreenshots/settings/logo.png) | ![settings](https://github.com/GrbavaCigla/eStudent/blob/master/metadata/en-US/images/phoneScreenshots/settings/logo.png) |
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
