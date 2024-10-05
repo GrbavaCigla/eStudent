@@ -13,6 +13,10 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           cache: true
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
       - run: flutter pub get
       - run: dart run build_runner build
       - run: flutter build apk
