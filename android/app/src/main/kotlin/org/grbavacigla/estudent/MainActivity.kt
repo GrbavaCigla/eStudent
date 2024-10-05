@@ -1,4 +1,4 @@
-package org.grbavacigla.estudent.estudent
+package org.grbavacigla.estudent
 
 import io.flutter.embedding.android.FlutterActivity
 
