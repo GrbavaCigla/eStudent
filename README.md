@@ -12,3 +12,5 @@ The eStudent schedule app allows students to effortlessly track their class sche
 |----------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
 | ![start](https://github.com/GrbavaCigla/eStudent/blob/master/metadata/en-US/images/phoneScreenshots/start.jpg) | ![mid](https://github.com/GrbavaCigla/eStudent/blob/master/metadata/en-US/images/phoneScreenshots/mid.jpg) | ![settings](https://github.com/GrbavaCigla/eStudent/blob/master/metadata/en-US/images/phoneScreenshots/settings.jpg) |
 
+## License
+This project is licensed under the GPLv3 License - see the LICENSE file for details.
