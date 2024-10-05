@@ -8,6 +8,8 @@ The eStudent schedule app allows students to effortlessly track their class sche
 
 ## Screenshots
 
+> Note: somewhere along the way, screenshots got messed up colors.
+
 | Schedule                                                                                                       | Additional information                                                                                     | Settings                                                                                                             |
 |----------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
 | ![start](https://github.com/GrbavaCigla/eStudent/blob/master/metadata/en-US/images/phoneScreenshots/start.jpg) | ![mid](https://github.com/GrbavaCigla/eStudent/blob/master/metadata/en-US/images/phoneScreenshots/mid.jpg) | ![settings](https://github.com/GrbavaCigla/eStudent/blob/master/metadata/en-US/images/phoneScreenshots/settings.jpg) |
